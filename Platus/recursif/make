@@ -1,0 +1,4 @@
+gcc $1.c -o prg -lMLV -lm -Wall -ansi
+./prg
+rm -rf *.o
+rm prg
