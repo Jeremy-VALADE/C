@@ -5,8 +5,7 @@
 
 /* Tableau contenant la longueur des vols de chaque nombre */
 unsigned long int tab[N];
-/* Variable content la longueur de vols maximum */
-int max = 0;
+
 
 /* Fonction syracuse */
 unsigned long int syracuse(unsigned long int n) {
@@ -37,19 +36,18 @@ unsigned long int syracuse(unsigned long int n) {
 }
 
 /* On cherche la longueur du vol maximale pour les nombres e, allant de 1 à N */
-void execution() {
-	int i;
-	int valeur;
+int execution() {
+	int i, max, valeur;
 	for (i = 1; i <= N; i++) {
 		valeur = syracuse(i);
 		if (valeur > max)
 			max = valeur;
 	}
+	return max;
 }
 
 /* Programme */
 int main() {
-	execution();
-	printf("Max : %d\n", max);
+	printf("Max : %d\n", execution());
 	return 0;
 }

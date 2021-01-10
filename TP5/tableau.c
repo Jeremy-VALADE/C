@@ -93,11 +93,13 @@ int* fill_array(void) {
 	int i;
 	printf("Saisir la taille du tab : ");
 	scanf("%d", &taille);
+	printf("%d\n", taille);
 
 	tab = allocate_integer_array(taille);
 	for (i = 0 ; i < taille ; i++) {
 		printf("Tab[%d] : ", i);
 		scanf("%d", &tab[i]);
+		printf("%d\n", tab[i]);
 	}
 
 	tab[taille] = -1;
