@@ -84,15 +84,19 @@ int solveSudoku(Board b, int row, int col) {
 		return solveSudoku(b, row, col + 1);
 	}
 
+	int compteur = 0;
+	int nombre = 0;
 	for (num = 1; num <= N; num++) {
 		if (possible(b, num, row, col)) {
 			b[row][col] = num;
-
-			if (solveSudoku(b, row, col+1))
-				return 1;
+			nombre = solveSudoku(b, row, col+1);
+			compteur += nombre;
+			if (compteur > 0)
+				return compteur;
 
 		}
-		b[row][col] = 0;
+		b[row][col]  = 0;
+		compteur -= nombre;
 	}
 	return 0;
 }

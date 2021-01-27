@@ -9,7 +9,7 @@ int main(int argc, char* argv[]) {
 		printf("Erreur : l'argument doit être sudoku/data/grid*.txt\n");
 		return 0;
 	}
-	solveSudoku(b, 0, 0);
+	printf("%d\n", solveSudoku(b, 0, 0));
 
 	return 0;
 }

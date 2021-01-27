@@ -220,7 +220,7 @@ void split_arrays(int* array, int** first, int** second) {
 	(*second)[taille2] = -1;
 }
 
-/* Cette fonction trie un tableau en utilisant le tri par fusion */
+/* Cette fonction trie un tableau en utilisant le tri fusion */
 int* merge_sort(int* array) {
 	if (array_size(array) <= 1)
 		return array;
