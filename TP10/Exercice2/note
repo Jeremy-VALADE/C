@@ -1,0 +1,44 @@
+/*
+
+Méthode qui compare l'âge de deux personnes
+Retour possible de la méthode :
+0 -> âge de la personne 1 est infèrieur à l'âge de la personne 2
+1 -> âge de la personne 1 est supérieur à l'âge de la personne 2
+2 -> l'âge des deux personnes sont égaux
+*/
+int age_order(Cell* p1, Cell* p2) {
+	if (p1->age < p2-> age)
+		return 0;
+	else if (p1->age < p2-> age)
+		return 1;
+	return 2;
+}
+
+
+void ordered_insertion(List* liste, Cell new, int order_func(Cell*, Cell*) {
+	int i; /*Compteur de la liste */
+	
+	if (size(liste) == 0)
+		l[0] = new;
+	else {
+		while (i < size(liste)) {
+			int valeur = age_order(l[i], new);
+			/* insertion de la personne avant*/
+			if (valeur == 1) {
+				l[i-1]->next = new;
+				new->next = l[i]; 
+				break;
+			}		
+			else if (valeur == 2) {
+				int valeur2 = name_order(l[i], new);
+				l[i-1]->next = new;
+				new->next = l[i];
+				break;
+				
+			}
+			/* insertion de la personne après*/
+			/*on continue la boucle */
+			i++;
+		}
+	}
+}

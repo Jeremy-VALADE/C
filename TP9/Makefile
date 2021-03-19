@@ -6,6 +6,9 @@ exe1: exe1.o
 
 exe2: exe2.o 
 	$(CC) exe2.c -o exe2 $(CFLAGS)
+
+exe3: exe3.o 
+	$(CC) exe3.c -o exe3 $(CFLAGS)
 clean:
 	rm *.o
 	rm exe?
