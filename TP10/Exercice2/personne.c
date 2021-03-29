@@ -45,6 +45,16 @@ int name_order(Cell* p1, Cell* p2) {
 }
 
 
+void ordered_recursive(List* liste, Cell* new, int order_func(Cell* c1, Cell* c2)) {
+	if (!(*liste) || (order_func(*liste, new) > 0)) {
+		new->next = *liste;
+		*liste = new;
+	}
+	else {
+		ordered_recursive(&((*liste)->next), new, order_func);
+	}
+}
+
 void ordered_insertion(List* liste, Cell* new, int order_func(Cell* c1, Cell* c2)) {
 	Cell* tmp = NULL;
 	Cell* c = *liste;

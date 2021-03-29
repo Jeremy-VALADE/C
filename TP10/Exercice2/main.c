@@ -12,7 +12,7 @@ int main() {
 	
 	while (fscanf(fichier, "%s %s %d", nom, prenom, &age) == 3) { 
 		Cell* c = allocate_cell(nom, prenom, age);
-		ordered_insertion(&l,  c, name_order);
+		ordered_recursive(&l,  c, name_order);
 	}
 	fclose(fichier);
 

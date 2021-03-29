@@ -11,3 +11,4 @@ int age_order(Cell* p1, Cell* p2);
 void ordered_insertion(List* liste, Cell* new, int order_func(Cell*, Cell*));
 void display(List liste);
 void free_list(List liste);
+void ordered_recursive(List* liste, Cell* new, int order_func(Cell* c1, Cell* c2));
