@@ -1,7 +1,7 @@
 #include <MLV/MLV_all.h>
 
-#define NB_LIGNE 4
-#define NB_COLONNE 4
+#define NB_LIGNE 16
+#define NB_COLONNE 16
 
 
 #ifndef __Taquin__
