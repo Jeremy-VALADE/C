@@ -94,6 +94,7 @@ Taquin* createTaquin(int width, int height, int nbCase, int epaisseurDuTrait) {
 }
 
 void free_taquin(Taquin* taquin) {
+	free(taquin->p);
 	free(taquin);
 }
 

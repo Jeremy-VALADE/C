@@ -8,7 +8,7 @@ int main() {
 	int x, y;
 	time_t begin, end;
 	MLV_Image* image = NULL;
-	Taquin* taquin = createTaquin(512, 512, 3, 5);
+	Taquin* taquin = createTaquin(512, 512, 4, 5);
 
 	srand(time(NULL));
 	create_window(taquin);
