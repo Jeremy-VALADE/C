@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "objet.h"
+
 void create_window(Taquin* taquin) {
 	MLV_create_window("Jeu du Taquin", NULL, taquin->width, taquin->height);
 }

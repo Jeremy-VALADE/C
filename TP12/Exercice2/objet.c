@@ -7,7 +7,6 @@
 
 List tableau[NB_PACK];
 
-
 int hash(char word[50]) {
 	int i;
 	unsigned int somme = 0;
