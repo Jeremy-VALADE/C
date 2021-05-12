@@ -1,0 +1,112 @@
+Rapport de relecture de code
+
+Production soumise à la relecture : Jeu des 8 dames
+Projet/code produit par Jérémy Valade
+Relecture opérée par Nicolas Borie le 21 avril 2021
+
+Concision et propreté des rendus
+Les productions transmises et leurs éléments sont corrects et bien identifiés.
+
+Il y a avait tout de même les produits de compilation présents. Un petit 
+m
+a
+k
+e
+c
+≤
+a
+n
+ avant la constitution de l'archive permettrait de réduire les fichiers transmis.
+
+Installation et compilation des sources transmises
+Un makefile propre, lisible et complet permet la compilation de toutes les sources sans aucun warning
+et avec les drapeaux -Wall et -ansi (voire -pedantic). Le makefile gère correctement les dépendances
+et intègre une règle pour le nettoyage des produits de compilation.
+
+Un makefile clair, lisible et complet permet la compilation et le nettoyage des sources avec les règles attendues. Les flags de compilation sont bien répartis entre les commandes et très sérieux.
+
+Fonctionnalités implantées dans les rendus
+Les programmes répondent correctement à toutes les tâches qu'ils sont censés effectuer.
+
+C'est un programme à interface graphique pour lequel c'est l'utilisateur qui doit vérifier que tout fonctionne (non possible d'automatiser la vérification).
+
+Utilisations et sécurité des programmes produits
+Les programmes informent l'utilisateur et le conseillent en cas de mauvaise utilisation.
+
+Un fichier readme et de l'information textuelles et sonore durant l'utilisation du programme. C'est très intuitif même sans documentation car très ergonomique.
+
+Nommage des éléments dans les productions rendues
+Les identifiants suivent des règles de nommages sur tout le code de manière cohérente.
+
+Les éléments portent des noms explicites. Le projet est subdivisé en modules cohérents.
+
+Efficacité et performance des productions rendues
+Les programmes sont basés sur des algorithmes attendues.
+
+Pas de folies possibles pour ce projet où la technique d'algorithme est fortement imposé par l'énoncé. Le rendu suit complètement la stratégie des bitboards.
+
+Commentaires dans les sources des productions rendues
+Des commentaires précisent les parties critiques du code, levant les ambiguïtés.
+
+L'intégralité du code suit des règles cohérentes sur tous les modules. En terme d'organisation et de documentation, cela rend le rendu particulièrement lisible malgré sa technicité.
+
+derniers commentaires :
+Peu d'amélioration possible pour ce TP mis à part ne pas transmettre les fichiers objets (les points o sont machines dépendants). La qualité générale des sources suit déjà les standards attendus en fin de semestre. Si le TP avait un barème sur 20, ce rendu obtiendrait entre 17 et 20. Outre la technique, le programme final est ergonomique et visuellement efficace.
+
+<h1>Rapport de relecture de code</h1><br />Production soumise à la relecture : <b>Jeu des 8 dames</b><br />Projet/code produit par <b>Jérémy Valade</b><br />Relecture opérée par <b>Nicolas Borie</b> le 21 avril 2021<br /><br /><b>Concision et propreté des rendus</b><br />Les productions transmises et leurs éléments sont corrects et bien identifiés.<br /><br />Il y a avait tout de même les produits de compilation présents. Un petit `make clean` avant la constitution de l'archive permettrait de réduire les fichiers transmis.<br /><br /><b>Installation et compilation des sources transmises</b><br />Un makefile propre, lisible et complet permet la compilation de toutes les sources sans aucun warning <br />et avec les drapeaux -Wall et -ansi (voire -pedantic). Le makefile gère correctement les dépendances <br />et intègre une règle pour le nettoyage des produits de compilation.<br /><br />Un makefile clair, lisible et complet permet la compilation et le nettoyage des sources avec les règles attendues. Les flags de compilation sont bien répartis entre les commandes et très sérieux.<br /><br /><b>Fonctionnalités implantées dans les rendus</b><br />Les programmes répondent correctement à toutes les tâches qu'ils sont censés effectuer.<br /><br />C'est un programme à interface graphique pour lequel c'est l'utilisateur qui doit vérifier que tout fonctionne (non possible d'automatiser la vérification).<br /><br /><b>Utilisations et sécurité des programmes produits</b><br />Les programmes informent l'utilisateur et le conseillent en cas de mauvaise utilisation.<br /><br />Un fichier readme et de l'information textuelles et sonore durant l'utilisation du programme. C'est très intuitif même sans documentation car très ergonomique.<br /><br /><b>Nommage des éléments dans les productions rendues</b><br />Les identifiants suivent des règles de nommages sur tout le code de manière cohérente.<br /><br />Les éléments portent des noms explicites. Le projet est subdivisé en modules cohérents.<br /><br /><b>Efficacité et performance des productions rendues</b><br />Les programmes sont basés sur des algorithmes attendues.<br /><br />Pas de folies possibles pour ce projet où la technique d'algorithme est fortement imposé par l'énoncé. Le rendu suit complètement la stratégie des bitboards.<br /><br /><b>Commentaires dans les sources des productions rendues</b><br />Des commentaires précisent les parties critiques du code, levant les ambiguïtés.<br /><br />L'intégralité du code suit des règles cohérentes sur tous les modules. En terme d'organisation et de documentation, cela rend le rendu particulièrement lisible malgré sa technicité.<br /><br /><b>derniers commentaires :</b><br />Peu d'amélioration possible pour ce TP mis à part ne pas transmettre les fichiers objets (les points o sont machines dépendants). La qualité générale des sources suit déjà les standards attendus en fin de semestre. Si le TP avait un barème sur 20, ce rendu obtiendrait entre 17 et 20. Outre la technique, le programme final est ergonomique et visuellement efficace.
+
+# Rapport de relecture de code
+
+Production soumise à la relecture : **Jeu des 8 dames**
+Projet/code produit par **Jérémy Valade**
+Relecture opérée par **Nicolas Borie** le 21 avril 2021
+
+## Concision et propreté des rendus
+
+Les productions transmises et leurs éléments sont corrects et bien identifiés.
+
+Il y a avait tout de même les produits de compilation présents. Un petit `make clean` avant la constitution de l'archive permettrait de réduire les fichiers transmis.
+
+## Installation et compilation des sources transmises
+
+Un makefile propre, lisible et complet permet la compilation de toutes les sources sans aucun warning 
+et avec les drapeaux -Wall et -ansi (voire -pedantic). Le makefile gère correctement les dépendances 
+et intègre une règle pour le nettoyage des produits de compilation.
+
+Un makefile clair, lisible et complet permet la compilation et le nettoyage des sources avec les règles attendues. Les flags de compilation sont bien répartis entre les commandes et très sérieux.
+
+## Fonctionnalités implantées dans les rendus
+
+Les programmes répondent correctement à toutes les tâches qu'ils sont censés effectuer.
+
+C'est un programme à interface graphique pour lequel c'est l'utilisateur qui doit vérifier que tout fonctionne (non possible d'automatiser la vérification).
+
+## Utilisations et sécurité des programmes produits
+
+Les programmes informent l'utilisateur et le conseillent en cas de mauvaise utilisation.
+
+Un fichier readme et de l'information textuelles et sonore durant l'utilisation du programme. C'est très intuitif même sans documentation car très ergonomique.
+
+## Nommage des éléments dans les productions rendues
+
+Les identifiants suivent des règles de nommages sur tout le code de manière cohérente.
+
+Les éléments portent des noms explicites. Le projet est subdivisé en modules cohérents.
+
+## Efficacité et performance des productions rendues
+
+Les programmes sont basés sur des algorithmes attendues.
+
+Pas de folies possibles pour ce projet où la technique d'algorithme est fortement imposé par l'énoncé. Le rendu suit complètement la stratégie des bitboards.
+
+## Commentaires dans les sources des productions rendues
+
+Des commentaires précisent les parties critiques du code, levant les ambiguïtés.
+
+L'intégralité du code suit des règles cohérentes sur tous les modules. En terme d'organisation et de documentation, cela rend le rendu particulièrement lisible malgré sa technicité.
+
+## derniers commentaires :
+
+Peu d'amélioration possible pour ce TP mis à part ne pas transmettre les fichiers objets (les points o sont machines dépendants). La qualité générale des sources suit déjà les standards attendus en fin de semestre. Si le TP avait un barème sur 20, ce rendu obtiendrait entre 17 et 20. Outre la technique, le programme final est ergonomique et visuellement efficace.
+
+

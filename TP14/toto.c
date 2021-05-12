@@ -10,7 +10,7 @@
 #define MAX_SIZE 10
 
 typedef struct position {
-	char path[8192];
+	char* path;
 	unsigned long int size;
 } Position;
 
@@ -34,6 +34,7 @@ Tableau* create_tableau() {
 
 Position* create_link(const char* path, unsigned long int size) {
 	Position* p = (Position*) malloc(sizeof(Position));
+	p->path = (char*) malloc(sizeof(char) * (strlen(path) + 1));
 	strcpy(p->path, path);
 	p->size = size;
 	return p;
@@ -47,10 +48,14 @@ void display() {
 
 }
 
+void free_position(Position* pos) {
+	free(pos->path);
+	free(pos);
+}
 void free_tab() {
 	int i;
 	for (i = 0; i < t->size; i++) {
-		free(t->index[i]);
+		free_position(t->index[i]);
 	}
 	free(t);
 }
@@ -61,7 +66,7 @@ void insert_sorted(const char* path, int size) {
 		if (i < MAX_SIZE-1)
 			t->index[i+1] = t->index[i];
 		else 
-			free(t->index[i]);
+			free_position(t->index[i]);
 		i--;
 	}
 	if (i < MAX_SIZE-1)
@@ -84,10 +89,18 @@ int main(int argc, char* argv[]) {
 	t = create_tableau();
 
 	if (argc == 2) {
+
+	/*if (ftw(argv[1], insert_tab, 10) == -1) {
+			perror("ftw");
+			exit(EXIT_FAILURE);
+	}*/
+
 		ftw(argv[1], insert_tab, 10);
+	/*ftw("/home/jeremy/Documents/Esipe/IINFO1/ProgC/TP8", insert_tab, 1000);*/
 		display();
 		free_tab();
-		
+
+
 		exit(EXIT_SUCCESS);
 	}
 	return 0;

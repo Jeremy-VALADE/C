@@ -11,7 +11,6 @@ typedef struct carre {
 	int ligne;
 	int colonne;
 	MLV_Image* image;
-
 } Carre;
 
 typedef struct plateau {

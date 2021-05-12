@@ -7,7 +7,7 @@
 #include <string.h>
 #include <ftw.h>
 
-#define MAX_SIZE 10
+#define MAX_SIZE 11
 
 typedef struct position {
 	char path[8192];
@@ -34,6 +34,7 @@ Tableau* create_tableau() {
 
 Position* create_link(const char* path, unsigned long int size) {
 	Position* p = (Position*) malloc(sizeof(Position));
+	/*p->path = (char*) malloc(sizeof(char) * (strlen(path) + 1));*/
 	strcpy(p->path, path);
 	p->size = size;
 	return p;
@@ -47,27 +48,38 @@ void display() {
 
 }
 
+void free_position(Position* pos) {
+	/*free(pos->path);*/
+	free(pos);
+}
 void free_tab() {
 	int i;
-	for (i = 0; i < t->size; i++) {
+	for (i = 0; i <= t->size; i++) {
 		free(t->index[i]);
 	}
 	free(t);
 }
 
 void insert_sorted(const char* path, int size) {
+	Position* p = NULL;
 	int i = t->size-1;
+
+	/*if (t->size == 10) {
+		free(t->index[t->size]);
+	}*/
+
+	t->index[t->size] = create_link(path, size);
+
 	while (i >= 0 && t->index[i]->size < size) {
-		if (i < MAX_SIZE-1)
-			t->index[i+1] = t->index[i];
-		else 
-			free(t->index[i]);
+	/*	p = t->index[i+1];*/
+		t->index[i+1] = t->index[i];
+		/*t->index[i] = p;*/
 		i--;
 	}
 	if (i < MAX_SIZE-1)
-		t->index[i+1] = create_link(path, size);
+		t->index[i+1] =t->index[t->size] ;
 	
-	if (t->size < MAX_SIZE)
+	if (t->size < (MAX_SIZE-1))
 		t->size++;
 }	
 
@@ -87,9 +99,12 @@ int main(int argc, char* argv[]) {
 		ftw(argv[1], insert_tab, 10);
 		display();
 		free_tab();
-		
 		exit(EXIT_SUCCESS);
 	}
+
+
 	return 0;
 
 }
+
+
