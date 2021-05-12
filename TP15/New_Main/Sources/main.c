@@ -67,10 +67,8 @@ int main() {
 				if (stack_size() >= tabOperation[position]->arite) {
 					int arite = tabOperation[position]->arite;
 					args = (int*) malloc(arite*sizeof(int));
-					i = 0;
 					while (arite--) {
-						args[i] = stack_pop();
-						i++;
+						args[arite] = stack_pop();
 					}
 					result = tabOperation[position]->eval(args);
 					if (result != INT_MIN)
