@@ -7,7 +7,7 @@
 
 List tableau[NB_PACK];
 
-int hash(char word[50]) {
+int hash(char word[8192]) {
 	int i;
 	unsigned int somme = 0;
 	for (i = 0; i < strlen(word); i++) {
@@ -18,14 +18,14 @@ int hash(char word[50]) {
 }
 
 
-Node* allocation(char word[50]) {
+Node* allocation(char word[8192]) {
 	Node* node = (Node*)malloc(sizeof(Node));
 	strcpy(node->word, word);
 	node->next = NULL;
 	return node;
 }
 
-int find(List* liste, char word[50]) {
+int find(List* liste, char word[8192]) {
 	Node* node = *liste;
 	while (node != NULL) {
 		if (strcmp(node->word, word) == 0) {
@@ -37,9 +37,7 @@ int find(List* liste, char word[50]) {
 	return 0;
 }
 
-
-
-void insertion(List* liste, Node* node) {
+void insertion(Node* node) {
 	int hashWord = hash(node->word);
 	if (tableau[hashWord] == NULL) {
 		node->next = tableau[hashWord];

@@ -1,0 +1,7 @@
+Exercice 1 :
+
+On sait que la condition d'arrêt de la fonction strange est quand i < 0.
+Or à chaque appel de la fonction strange i = 10, et i est décrémenter après l'appel récursif.
+
+Donc le programme va faire des appeles récursif à l'infini  et afficher 10 pour finir par produire une segfault.
+

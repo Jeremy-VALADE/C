@@ -50,8 +50,6 @@ void freeTab(char** tab, int num_ligne) {
 		free(tab[i]);
 	}
 	free(tab);
-
-
 }
 
 int main() {
@@ -59,7 +57,7 @@ int main() {
 	int num_colonne = 0;
 	/* Case du tableau */
 	char** tab;
-	printf("Donner deux dimensions entières : ");
+	printf("Donner deux dimensions entières ($1 $2) : ");
 	scanf("%d %d", &num_ligne, &num_colonne);
 	printf("Num ligne : %d\n", num_ligne);
 	printf("Num colonne : %d\n", num_colonne);

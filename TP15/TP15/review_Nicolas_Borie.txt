@@ -1,0 +1,135 @@
+
+Rapport de relecture de code
+
+Production soumise à la relecture : TP 15
+Projet/code produit par Jérémy Valade
+Relecture opérée par Nicolas Borie le 18 mai 2021
+
+Concision et propreté des rendus
+Les productions transmises sont particulièrement bien structurées et la précision du nommage
+ne laisse aucun doute sur le contenu des répertoires et fichiers.
+
+Installation et compilation des sources transmises
+Un makefile propre, lisible et complet permet la compilation de toutes les sources sans aucun warning
+et avec les drapeaux -Wall et -ansi (voire -pedantic). Le makefile gère correctement les dépendances
+et intègre une règle pour le nettoyage des produits de compilation.
+
+Les plugins sont déjà compilés sous une architecture 64 bits. La portabilité pourrait être compromise néanmoins.
+
+Fonctionnalités implantées dans les rendus
+Les programmes répondent correctement à toutes les tâches qu'ils sont censés effectuer.
+
+Plugins : Déjà compilé Opérations attendues : OK Gestion historique : OK Parseur permissif : OK echo "1 1 + 1 1 + 1 1 + 1 * 1 1 + *+* pq" | ./calc echo "1 1 + 1 1+1 1 + 1*1 1 + *+* pq" | ./calc echo -e "1 1 + 1 1+1 1\t\t\n\n\n + 1*1 1 + *+* pq" | ./calc echo -e "1 1 +\n\t\t 1 1+1 1\t\t\n\n\n + 1*1 1 + *+* pq" | ./calc
+
+Utilisations et sécurité des programmes produits
+Les programmes ne produisent pas d'erreur même en cas d'utilisation non conforme.
+
+Il y a un gros effort sur l'information utilisateur : Readme, howto au lancement du programme et message contextuel à l'utilisation.
+
+Nommage des éléments dans les productions rendues
+Les éléments des productions sont correctement nommés.
+
+Les plugins contiennent un symbole 
+a
+π
+t
+a
+b
+≤
+ dont on devine la structuration. Toutefois, comme on a pas les sources des plugins, il n'est pas possible de voir comment le symbole est construit. On aurait du s'attendre à appels 3 
+d
+l
+s
+y
+m
+ par plugin sans cette structuration.
+
+Efficacité et performance des productions rendues
+Les programmes suppriment tout calcul non nécessaire à l'aide d'astuces simples et expliquées.
+
+Globalement, le code est très concis et va à l'essentiel. Il y a peu de lignes de codes au final (enfin, peu de lignes pour un TP de fin d'année avec autant de technologie). Le main est quand même trop long et aurait mérité d'être subdivisé en plusieurs sous fonction.
+
+Commentaires dans les sources des productions rendues
+Des commentaires précisent les parties critiques du code, levant les ambiguïtés.
+
+Les commentaires sont bien placés autant des choix et des passages techniques.
+
+derniers commentaires :
+Mettre une structure 
+a
+π
+t
+a
+b
+≤
+ dans les plugins est un choix très raisonnable (même si c'est une des premières fois que je le vois). Il aurait été quand même bien de ne fournir que les sources des plugins (et pas seulement les shareds objetcs finaux). Le niveau encore plus fort consiste à produire un makefile qui compile tous les plugins sans connaitre la liste des fichiers (soit avec du bash, soit avec un bon patsubst courant dans les makefile). Le rendu relève toutes les difficultés importantes du TP.
+
+<h1>Rapport de relecture de code</h1><br />Production soumise à la relecture : <b>TP 15</b><br />Projet/code produit par <b>Jérémy Valade</b><br />Relecture opérée par <b>Nicolas Borie</b> le 18 mai 2021<br /><br /><b>Concision et propreté des rendus</b><br />Les productions transmises sont particulièrement bien structurées et la précision du nommage <br />ne laisse aucun doute sur le contenu des répertoires et fichiers.<br /><br /><b>Installation et compilation des sources transmises</b><br />Un makefile propre, lisible et complet permet la compilation de toutes les sources sans aucun warning <br />et avec les drapeaux -Wall et -ansi (voire -pedantic). Le makefile gère correctement les dépendances <br />et intègre une règle pour le nettoyage des produits de compilation.<br /><br />Les plugins sont déjà compilés sous une architecture 64 bits. La portabilité pourrait être compromise néanmoins.<br /><br /><b>Fonctionnalités implantées dans les rendus</b><br />Les programmes répondent correctement à toutes les tâches qu'ils sont censés effectuer.<br /><br />Plugins : Déjà compilé
+Opérations attendues : OK
+Gestion historique : OK
+Parseur permissif : OK
+echo "1 1 + 1 1 + 1 1 + 1 * 1 1 + *+* pq" | ./calc
+echo "1 1 + 1 1+1 1 + 1*1 1 + *+* pq" | ./calc
+echo -e "1 1 + 1 1+1 1\t\t\n\n\n + 1*1 1 + *+* pq" | ./calc
+echo -e "1 1 +\n\t\t  1 1+1 1\t\t\n\n\n + 1*1 1 + *+* pq" | ./calc<br /><br /><b>Utilisations et sécurité des programmes produits</b><br />Les programmes ne produisent pas d'erreur même en cas d'utilisation non conforme.<br /><br />Il y a un gros effort sur l'information utilisateur : Readme, howto au lancement du programme et message contextuel à l'utilisation.<br /><br /><b>Nommage des éléments dans les productions rendues</b><br />Les éléments des productions sont correctement nommés.<br /><br />Les plugins contiennent un symbole `api_table` dont on devine la structuration. Toutefois, comme on a pas les sources des plugins, il n'est pas possible de voir comment le symbole est construit. On aurait du s'attendre à appels 3 `dlsym` par plugin sans cette structuration.<br /><br /><b>Efficacité et performance des productions rendues</b><br />Les programmes suppriment tout calcul non nécessaire à l'aide d'astuces simples et expliquées.<br /><br />Globalement, le code est très concis et va à l'essentiel. Il y a peu de lignes de codes au final (enfin, peu de lignes pour un TP de fin d'année avec autant de technologie). Le main est quand même trop long et aurait mérité d'être subdivisé en plusieurs sous fonction.<br /><br /><b>Commentaires dans les sources des productions rendues</b><br />Des commentaires précisent les parties critiques du code, levant les ambiguïtés.<br /><br />Les commentaires sont bien placés autant des choix et des passages techniques.<br /><br /><b>derniers commentaires :</b><br />Mettre une structure `api_table` dans les plugins est un choix très raisonnable (même si c'est une des premières fois que je le vois). Il aurait été quand même bien de ne fournir que les sources des plugins (et pas seulement les shareds objetcs finaux). Le niveau encore plus fort consiste à produire un makefile qui compile tous les plugins sans connaitre la liste des fichiers (soit avec du bash, soit avec un bon patsubst courant dans les makefile). Le rendu relève toutes les difficultés importantes du TP.
+
+# Rapport de relecture de code
+
+Production soumise à la relecture : **TP 15**
+Projet/code produit par **Jérémy Valade**
+Relecture opérée par **Nicolas Borie** le 18 mai 2021
+
+## Concision et propreté des rendus
+
+Les productions transmises sont particulièrement bien structurées et la précision du nommage 
+ne laisse aucun doute sur le contenu des répertoires et fichiers.
+
+## Installation et compilation des sources transmises
+
+Un makefile propre, lisible et complet permet la compilation de toutes les sources sans aucun warning 
+et avec les drapeaux -Wall et -ansi (voire -pedantic). Le makefile gère correctement les dépendances 
+et intègre une règle pour le nettoyage des produits de compilation.
+
+Les plugins sont déjà compilés sous une architecture 64 bits. La portabilité pourrait être compromise néanmoins.
+
+## Fonctionnalités implantées dans les rendus
+
+Les programmes répondent correctement à toutes les tâches qu'ils sont censés effectuer.
+
+Plugins : Déjà compilé
+Opérations attendues : OK
+Gestion historique : OK
+Parseur permissif : OK
+echo "1 1 + 1 1 + 1 1 + 1 * 1 1 + *+* pq" | ./calc
+echo "1 1 + 1 1+1 1 + 1*1 1 + *+* pq" | ./calc
+echo -e "1 1 + 1 1+1 1\t\t\n\n\n + 1*1 1 + *+* pq" | ./calc
+echo -e "1 1 +\n\t\t  1 1+1 1\t\t\n\n\n + 1*1 1 + *+* pq" | ./calc
+
+## Utilisations et sécurité des programmes produits
+
+Les programmes ne produisent pas d'erreur même en cas d'utilisation non conforme.
+
+Il y a un gros effort sur l'information utilisateur : Readme, howto au lancement du programme et message contextuel à l'utilisation.
+
+## Nommage des éléments dans les productions rendues
+
+Les éléments des productions sont correctement nommés.
+
+Les plugins contiennent un symbole `api_table` dont on devine la structuration. Toutefois, comme on a pas les sources des plugins, il n'est pas possible de voir comment le symbole est construit. On aurait du s'attendre à appels 3 `dlsym` par plugin sans cette structuration.
+
+## Efficacité et performance des productions rendues
+
+Les programmes suppriment tout calcul non nécessaire à l'aide d'astuces simples et expliquées.
+
+Globalement, le code est très concis et va à l'essentiel. Il y a peu de lignes de codes au final (enfin, peu de lignes pour un TP de fin d'année avec autant de technologie). Le main est quand même trop long et aurait mérité d'être subdivisé en plusieurs sous fonction.
+
+## Commentaires dans les sources des productions rendues
+
+Des commentaires précisent les parties critiques du code, levant les ambiguïtés.
+
+Les commentaires sont bien placés autant des choix et des passages techniques.
+
+## derniers commentaires :
+
+Mettre une structure `api_table` dans les plugins est un choix très raisonnable (même si c'est une des premières fois que je le vois). Il aurait été quand même bien de ne fournir que les sources des plugins (et pas seulement les shareds objetcs finaux). Le niveau encore plus fort consiste à produire un makefile qui compile tous les plugins sans connaitre la liste des fichiers (soit avec du bash, soit avec un bon patsubst courant dans les makefile). Le rendu relève toutes les difficultés importantes du TP.
+

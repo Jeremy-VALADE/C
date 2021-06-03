@@ -1,24 +1,24 @@
-# Makefile TP 7
-
 CC=gcc
 CFLAGS=-Wall -ansi -pedantic
 OBJ=main.o interface.o operation.o dame.o
 LDFLAGS=-lMLV
+sources=Sources/
+headers=Headers/
 
 dame: $(OBJ)
 	$(CC) -o dame $(OBJ) $(LDFLAGS)
 
-interface.o: interface.c interface.h 
-	$(CC) -c interface.c -o interface.o $(CFLAGS)
+interface.o: $(sources)interface.c $(headers)interface.h 
+	$(CC) -c $(sources)interface.c -o interface.o $(CFLAGS)
 
-dame.o: dame.c dame.h operation.o operation.h 
-	$(CC) -c dame.c -o dame.o $(CFLAGS)
+dame.o: $(sources)dame.c $(headers)dame.h operation.o $(headers)operation.h 
+	$(CC) -c $(sources)dame.c -o dame.o $(CFLAGS)
 
-operation.o: operation.c operation.h 
-	$(CC) -c operation.c -o operation.o $(CFLAGS)
+operation.o: $(sources)operation.c $(headers)operation.h 
+	$(CC) -c $(sources)operation.c -o operation.o $(CFLAGS)
 
-main.o: main.c interface.h operation.o
-	$(CC) -c main.c -o main.o $(CFLAGS)
+main.o: $(sources)main.c $(headers)interface.h operation.o
+	$(CC) -c $(sources)main.c -o main.o $(CFLAGS)
 
 clean:
 	rm -f *.o

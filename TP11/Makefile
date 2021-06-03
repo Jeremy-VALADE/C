@@ -1,21 +1,21 @@
-# Makefile TP 7
-
 CC=gcc
 CFLAGS=-Wall -ansi -pedantic
 OBJ=interface.o main.o objet.o
 LDFLAGS=-lMLV
+sources=Sources/
+headers=Headers/
 
 taquin: $(OBJ)
 	$(CC) -o taquin $(OBJ) $(LDFLAGS)
 
-interface.o: interface.c interface.h objet.h
-	$(CC) -c interface.c -o interface.o $(CFLAGS)
+interface.o: $(sources)interface.c $(headers)interface.h $(headers)objet.h
+	$(CC) -c $(sources)interface.c -o interface.o $(CFLAGS)
 
-objet.o: objet.c objet.h 
-	$(CC) -c objet.c -o objet.o $(CFLAGS)
+objet.o: $(sources)objet.c $(headers)objet.h 
+	$(CC) -c $(sources)objet.c -o objet.o $(CFLAGS)
 
-main.o: main.c objet.h interface.h
-	$(CC) -c main.c -o main.o $(CFLAGS)
+main.o: $(sources)main.c $(headers)objet.h $(headers)interface.h
+	$(CC) -c $(sources)main.c -o main.o $(CFLAGS)
 
 clean:
 	rm -f *.o

@@ -19,6 +19,7 @@ typedef struct tableau {
 	int size;
 } Tableau;
 
+/* Variable globale contenant des informations sur les dix fichiers les plus gros */
 Tableau* t;
 
 Tableau* create_tableau() {
@@ -72,13 +73,12 @@ void insert_sorted(const char* path, int size) {
 }	
 
 static int insert_tab(const char *fpath, const struct stat *sb, int tflag) {
-	if (tflag != 1) {
+	if (tflag != 1) { /* tflag == 1 -> correspond au fichier*/
 		insert_sorted(fpath, sb->st_size);
 	}
 
 	return 0;
 }
-
 
 int main(int argc, char* argv[]) {
 	t = create_tableau();
@@ -91,5 +91,4 @@ int main(int argc, char* argv[]) {
 		exit(EXIT_SUCCESS);
 	}
 	return 0;
-
 }

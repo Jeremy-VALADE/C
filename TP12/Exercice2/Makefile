@@ -16,4 +16,4 @@ main.o: main.c objet.h
 
 clean:
 	rm -f *.o
-	rm -f taquin
+	rm -f exe

@@ -5,11 +5,10 @@ OBJ=personne.o main.o
 
 exe: main.o personne.o
 	$(CC) -o exe $(OBJ) $(CFLAGS)
-main.o : main.c
-	$(CC) -c main.c -o main.o $(CFLAGS)
-personne.o : personne.h personne.c
-	$(CC) -c personne.c -o personne.o $(CFLAGS)
+main.o : Sources/main.c
+	$(CC) -c Sources/main.c -o main.o $(CFLAGS)
+personne.o : Headers/personne.h Sources/personne.c
+	$(CC) -c Sources/personne.c -o personne.o $(CFLAGS)
 
 clean:
-	rm *.o
-	rm exe?
+	rm *.o exe
